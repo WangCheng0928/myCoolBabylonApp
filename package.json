@@ -17,6 +17,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "earcut": "^2.2.4",
     "html-webpack-plugin": "^5.5.0",
     "webpack-html-plugin": "^0.1.1"
   }

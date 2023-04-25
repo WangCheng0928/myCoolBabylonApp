@@ -1,14 +1,16 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   mode: 'development',
   entry: {
-    index: './index.js'
+    index: './src/index.js'
   },
   devServer: {
-    static: './dist'
+    static: './dist',
+    port: 4000
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -24,7 +26,10 @@ module.exports = {
           }
         ]
       }
-    )
+    ),
+    new webpack.ProvidePlugin({
+      earcut: 'earcut'
+    })
   ],
   output: {
     filename: '[name].bundle.js',
